@@ -1,0 +1,59 @@
+name: Laravel Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:5.7
+        env:
+          MYSQL_ROOT_PASSWORD:
+          MYSQL_DATABASE: test
+          MYSQL_USER: test
+          MYSQL_PASSWORD: test
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: Install Composer Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Generate Optimized Files
+        run: php artisan optimize
+
+      - name: Configure Environment Variables
+        run: cp .env.example .env && php artisan key:generate
+
+      - name: Run Database Migrations
+        run: php artisan migrate --force
+
+      - name: Start PHP-FPM
+        run: sudo service php8.3-fpm start
+
+      - name: Deploy to Server
+        run: |
+          rsync -avz --delete \
+            --exclude ".env" \
+            --exclude "vendor" \
+            --exclude "node_modules" \
+            --exclude "storage/*.key" \
+            --exclude "public/storage" \
+            . root@207.148.74.167:/var/www/laravel/laravel-action
+
+      - name: Reload PHP Service
+        run: sudo service php8.3-fpm reload
