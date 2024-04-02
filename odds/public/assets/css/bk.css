@@ -1,0 +1,783 @@
+/* Body */
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    width: 1200px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+}
+img {
+    max-width: 100%;
+}
+
+:root {
+    --bk-primary: #FF3400;
+    --bk-secondary: #EF7F3D;
+
+}
+.w-10 {
+    width: 10%;
+}
+.w-20 {
+    width: 20%;
+}
+.w-30 {
+    width: 30%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-60 {
+    width: 60%;
+}
+.w-70 {
+    width: 70%;
+}
+.w-80 {
+    width: 80%;
+}
+.w-90 {
+    width: 90%;
+}
+.w-100 {
+    width: 100%;
+}
+.flex {
+    display: flex;
+}
+.rd {
+    border-radius: 4px;
+}
+.list-btn-bk {
+    display: grid;
+    grid-auto-columns: auto;
+    grid-gap: 10px;
+    grid-template-columns: repeat(8, 1fr);
+}
+.btn-bk {
+    background: #D6D8DC;
+    font-size: .8em;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+    padding: .6em 1em;
+    border-radius: 4px;
+}
+.btn-bk.active, .btn-bk:hover {
+    background: #707070;
+    color: #fff;
+}
+
+.bk-header-search {
+    grid-row-gap: 10px;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.form-search-keo input, .bk-select-league select {
+
+height: 40px;
+
+display: block;
+
+width: 100%;
+
+border-radius: 4px;
+
+border: 1px solid #FFCCCC;
+
+padding: 0 .3rem;
+
+max-width: 100%;
+}
+.form-search-keo button.search {
+
+position: absolute;
+
+right: 0;
+
+top: 0;
+
+height: 40px;
+
+width: 40px;
+
+border: none;
+
+line-height: 40px;
+
+background: transparent;
+
+cursor: pointer;
+}
+.form-search-keo {
+    
+position: relative;
+}
+.bk-match {
+    font-size: 14px;
+    color: #000;
+}
+.chosen-date .bk-date, .chosen-date .keo-live {
+    color: #464646;
+    border: 1px solid #CED0D3;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0.6em 1em;
+    height: 35px;
+    line-height: 1;
+}
+.chosen-date .keo-live.active {
+    background: var(--bk-primary);
+    color: #fff;
+}
+.bk-select-nav .chosen-date {
+
+display: flex;
+
+justify-content: flex-start;
+}
+.bk-select-nav .chosen-date .bk-date {
+    margin-left: 10px;
+}
+.bk-date.active, .bk-date:hover {
+    background: #D9D9D9;
+}
+
+.bk-date .dot {
+    background: #FFC49E;
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    border-radius: 99px;
+    display: none;
+}
+
+.bk-date.active .dot  {
+    display: inline-block;
+}
+.bk-select-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+.bk-right-nav {
+    grid-auto-columns: auto;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+}
+.bk-hd {
+    background: var(--bk-secondary);
+    color: #fff;
+    font-size: .9em;
+    text-align: center;
+    padding: 0.6em 1em;
+    height: 35px;
+    line-height: 1;
+}
+.bk-select {
+    padding: 0.6em 1em;
+    height: 35px;
+    border-color: var(--bk-primary);
+}
+.select-odds-bookmarker select {
+    background: #5706F9;
+    color: #fff;
+}
+.bk-header  {
+    margin-top: 30px;
+    background: var(--bk-secondary);
+    color: #fff;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    align-items: center;
+    height: 54px;
+    overflow: hidden;
+}
+.bk-header>div {
+    position: relative;
+    border-right: 1px solid;
+}
+.bk-header>div::before {
+    content: "";
+    height: 100%;
+    background: #fff;
+    width: 1px;
+}
+
+.column-3>div {
+    width: 33%;
+}
+.bk-fulltime>.column-3, .bk-halftime>.column-3 {
+    border-top: 1px solid #fff;
+}
+.bk-header .column-3>div:not(:last-child) {
+    border-right: 1px solid #fff;
+}
+.bk-header .bk-time, .bk-header .bk-fixture {
+    height: 100%;
+    line-height: 54px;
+}
+.bk-bet, .bk-bet a {
+    background: #FF3400;
+    height: 100%;
+    line-height: 54px;
+    color: #fff;
+    text-decoration: none;
+}
+.bk-match {
+    background: #C6D0E8;
+}
+.odds-c, .bk-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.bk-match .bk-league {
+    width: 100%;
+    background: #DEDEDE;
+    padding: 0.3em 0.5em;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.odds-c>div {
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+    font-size: .9em;
+    width: 100%;
+    padding: 3px 12px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.odds-c span {
+    color: #FF6600;
+    font-weight: bold;
+}
+
+.odds-c .odd-v {
+    color: #000000;
+}
+.text-center {
+    text-align: center;
+}
+.bk-match .bk-bet-btn {
+    background: #FF3400;
+    text-align: center;
+    height: 31px;
+    display: block;
+    line-height: 31px;
+    border-radius: 4px;
+    text-decoration: underline;
+    padding: 0 15px;
+    color: #fff;
+}
+.bk-details .score, .bk-details .time, .bk-details .home-team {
+    color: #FF6600;
+    display: block;
+    white-space: nowrap;
+    font-weight: bold;
+}
+.odds-c [data-odds-status="up"]:after,.odds-c [data-odds-status="down"]:after  {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    right: 2px;
+    top: 12px;
+    background: url(img/up.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.odds-c [data-odds-status="down"]:after {
+    background: url(img/down.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.bk-details>div {
+    border-right: 1px solid #dbbdbd;
+    border-top: 1px solid #dbbdbd;
+}
+.bk-match .bk-fulltime>.column-3, .bk-match .bk-halftime .column-3 {
+    border-top: 1px solid #dbbdbd;
+}
+.odds-col:not(:last-child) {
+    border-right: 1px solid #dbbdbd;
+}
+.odds-col {
+    border-bottom: 1px solid #dbbdbd;
+}
+.btn-bet-inner {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bk-details .home-team, .bk-details .away-team {
+    display: block;
+    padding: 0 0.5em;
+}
+.bk-details>div.bk-time {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+    flex-direction: column;
+}
+.bk-details .bk-fixture {
+    padding-top: 15px;
+    font-weight: bold;
+    position: relative;
+}
+.bk-details .match-bet-btn {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.bk-league::before {
+    content: "";
+    width: 16px;
+    display: inline-block;
+    background: url(img/down-dark.png);
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+    margin-bottom: -5px;
+}
+.bk-league[data-open="false"]::before {
+        background: url(img/up-dark.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.title-odds {
+    position: absolute;
+    width: 300px;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #dbbdbd;
+    top: 0;
+    right: 0;
+    left: 50%;
+    transform: translate(-50%,0%);
+    cursor: pointer;
+}
+
+ .odds-other {
+    border-top: none;
+    padding-bottom: 15px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.title-odds:before, .title-odds:after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    background-color: hsl(0deg 0% 0% / 8%);
+    left: -8px;
+    transform: rotate(-25deg);
+}
+.title-odds:after {
+    left: unset;
+    right: -8px;
+    transform: rotate(25deg);
+}
+.more-odds {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.c-bettype__row-title {
+    flex: 1 0 auto;
+    display: flex;
+    border-top: 1px solid #dbbdbd;
+}
+.c-bettype .c-odds-button {
+    flex: 1 0 auto;
+}
+.c-odds-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 var(--c-12px-3);
+    min-height: 1.375rem;
+    background-color: hsl(0deg 0% 100% / 70%);
+    position: relative;
+    cursor: pointer;
+    background: #FFFFFF;
+    border-radius: 2px;
+    font-weight: bold;
+    margin: 5px;
+}
+[class^=c-bettype__col] {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 0;
+    text-align: center;
+}
+[class^=c-bettype__col] {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-width: 0;
+    text-align: center;
+    padding: 5px;
+}
+[class^=c-bettype__row] {
+    flex: 1 0 auto;
+    display: flex;
+    color: #000000;
+}
+.c-bettype--cs .c-odds-button {
+    padding: 0.125rem 0.25rem;
+}
+[class^=c-bettype__col] .c-odds-button {
+    width: 100%;
+}
+.odds-tabs .tablinks {
+    background: #FF6600;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: -5px;
+    position: relative;
+    z-index: 1;
+    min-width: 103px;
+    white-space: nowrap;
+    margin-right: 15px;
+    padding: 8px  15px;
+    position: relative;
+}
+.tab.odds-tabs {
+    padding: 15px;
+    padding-bottom: 5px;
+    width: 100%;
+}
+button.tablinks.active {
+    background: #c6d0e8;
+    color: var(--bk-secondary);
+    border-color: var(--bk-secondary);
+    border: 1px solid;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+}
+.odds-tabs .tablinks.active::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #c6d0e8;
+    z-index: 1;
+    left: 0;
+    bottom: -2px;
+}
+.c-bettype.c-bettype--cs {
+    background: #B6C3E1;
+    padding: .8em;
+    border-radius: 4px;
+}
+
+.c-bettype__btn-collapse img {
+    width: 16px;
+    margin-right: 10px;
+}
+.c-bettype__row-heading {
+    cursor: pointer;
+}
+.c-bettypes {
+    padding: 15px;
+}
+.du-doan .img-dd img {
+    width: 23px;
+    height: 23px;
+}
+.c-bettype__row-heading::before {
+    content: "";
+    background: url(img/down-dark.png);
+    position: relative;
+    display: inline-block;
+    width: 14px;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    height: 14px;
+    background-position: bottom;
+    margin-right: 5px;
+    background-size: 100%;
+}
+.c-bettype__row-heading.is-open::before {
+    background: url(img/up-dark.png);
+    object-fit: contain;
+    background-repeat: no-repeat;
+    height: 14px;
+    background-position: bottom;
+    margin-right: 5px;
+    background-size: 100%;
+}
+
+.c-bet-content, .bk-details, .odds-other-details {
+    display: none;
+}.c-bet-content.is-open, .odds-other-details.is-open{
+    display: block;
+}
+.bk-details.is-open {
+    display: flex;
+    width: 100%;
+}
+.bk-match .tabs-content {
+    flex: 1;
+}
+.bk-league.is-open::before {
+    content: "";
+    width: 16px;
+    display: inline-block;
+    background: url(img/up-dark.png);
+    height: 16px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 5px;
+    margin-bottom: -5px;
+}
+.c-odds-details {
+    display: flex;
+    padding: 0.5em;
+    flex-wrap: wrap;
+}
+.c-odds-details span {
+    cursor: pointer;
+    width: calc(100% / 5 - 10px);
+}
+.odds-other-details {
+    width: 100%;
+}
+.bk-fixture .c-odds-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+span.carret-down {
+    background: url(img/down-dark.png);
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+    margin-left: 10px;
+    transition: all .3s;
+}
+.title-odds.is-open .carret-down {
+    background: url(img/up-dark.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    vertical-align: middle;
+
+}
+.hiden {
+    display: none;
+}
+.bk-match * {
+    transition:  all .5s;
+}
+.bk-row-odds .odds-list:nth-child(n+3) {
+    display: none;
+}
+.odds-list.is-show {
+    display: flex !important;
+}
+.bk-fulltime-mb {
+    display: none;
+}
+
+
+    .hide-pc {
+      display: none;
+    }
+@media only screen and (max-width: 992px) {
+        .hide-pc {
+            display: block;
+        }
+.title-odds {
+    position: relative;
+    max-width: 100%;
+    text-align: center;
+}
+.odds-other .w-10, .odds-other .w-20 {
+    display: none;
+}
+.bk-odds-mobile {
+    display: inherit;
+}
+
+    .list-btn-bk {
+        overflow-x: scroll;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .list-btn-bk .btn-bk {
+    white-space: nowrap;
+}
+.bk-header-search {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+}
+.bk-select-nav {
+    flex-direction: column;
+    width: 100%;
+}
+.bk-select-nav .chosen-date .bk-date {
+    font-size: .8em;
+    white-space: nowrap;
+}
+.bk-select-nav .chosen-date {
+    overflow-x: auto;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+.chosen-date .bk-date, .chosen-date .keo-live {
+    white-space: nowrap;
+    line-height: 18px;
+}
+.hide-mb {
+    display: none;
+}
+.bk-right-nav {
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bk-right-nav select {
+    width: 100%;
+}
+.odds-tabs .tablinks {
+    font-size: .7em;
+    margin: 0;
+    min-width: 10px;
+    padding: 5px;
+}
+[class^=c-bettype__col] {
+    min-width: 40px;
+}
+.bk-details .match-bet-btn, .bk-header, .bk-row-odds {
+    display: none;
+}
+.c-bet-content.is-open {
+    overflow-x: scroll;
+}
+.bk-fulltime-mb {
+    display: flex;
+    color: var(--bk-secondary);
+    font-weight: bold;
+    font-size: 13px;
+}
+.c-odds-details span {
+
+    width: 20px;
+    margin: 2px;
+}
+.bk-header-live {
+    display: flex;
+    justify-content: space-between;
+    background: url(img/bk-title.png);
+    color: #fff;
+    cursor: pointer;
+    padding: 5px 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 30px;
+    border-radius: 4px 4px 0 0;
+    margin-top: 15px;
+}
+.bk-header-live .bk-hd {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background: none;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.odds-other .c-odds-details, .bk-row-odds {
+    display: none;
+}
+.odds-fmb-header {
+    display: flex;
+    flex-wrap: wrap;
+}
+.odds-fmb-header .odds-mb-title {
+    color: var(--bk-secondary);
+    text-align: center;
+    width: 33%;
+    padding: 5px;
+    font-size: .8em;
+}
+.odds-fmb-header .odds-mb-title:not(:last-child) {
+    border-right: 1px solid #dbbdbd;
+}
+.title-odds {
+    position: relative;
+
+}
+.more-odds {
+    display: none;
+}
+.odds-other {
+    justify-content: center;
+}
+.odds-c>div {
+
+    font-size: .85em;
+
+}
+.bk-details .bk-fixture {
+
+    padding: 5px;
+}
+.bk-details .home-team, .bk-details .away-team {
+    font-size: .85em;
+}
+.odds-c>div {
+
+    padding: 3px 6px;
+
+}
+
+
+}
